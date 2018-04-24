@@ -19,7 +19,10 @@ def isPalindrome(s):
         if len(s) <= 1:
             return True
         else:
-            return s[0] == s[-1] and isPal(s[1:-1])
+            first_char = s[0]
+            last_char = s[-1]
+            is_fist_eq_last = first_char == last_char
+            return is_fist_eq_last and isPal(s[1:-1])
 
     return isPal(toChars(s))
 
