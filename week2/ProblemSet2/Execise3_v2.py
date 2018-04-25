@@ -1,5 +1,5 @@
-balance = 320000
-annualInterestRate = 0.2
+balance = 999999
+annualInterestRate = 0.18
 
 monthlyInterestRate = annualInterestRate / 12
 runBalance = balance
