@@ -16,7 +16,7 @@ def fib(n):
         return fib(n-1) + fib(n-2)
 
 
-def fib_efficient(n, d):
+def fib_efficient(n, d={1:1, 2:2}):
     global numFibCalls
     numFibCalls += 1
     if n in d:
@@ -28,14 +28,18 @@ def fib_efficient(n, d):
         
         
         
-numFibCalls = 0
+
 fibArg = 34
 
+numFibCalls = 0
 print(fib(fibArg))
 print('function calls', numFibCalls)
 
 numFibCalls = 0
-        
-d = {1:1, 2:2}
+d = {1:1, 2:2 }
 print(fib_efficient(fibArg, d))
+print('function calls', numFibCalls)
+
+numFibCalls = 0
+print(fib_efficient(fibArg))
 print('function calls', numFibCalls)
