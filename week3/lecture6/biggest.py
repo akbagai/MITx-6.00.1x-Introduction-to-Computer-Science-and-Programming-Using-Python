@@ -32,3 +32,21 @@ animals['d'] = ['donkey']
 animals['d'].append('dog')
 animals['d'].append('dingo')
 print(biggest(animals))
+
+
+def biggest_v2(aDict):
+    '''
+    aDict: A dictionary, where all the values are lists.
+
+    returns: int, how many values are in the dictionary.
+    '''
+    # Your Code Here
+    count = 0
+    biggest = (None,)
+    for k, v in aDict.items():
+        if not all(biggest) or len(v) > biggest[1]:
+            biggest = (k, len(v))
+    return biggest[0]
+
+
+print(biggest_v2(animals))

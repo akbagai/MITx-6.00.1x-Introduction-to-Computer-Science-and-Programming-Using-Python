@@ -5,8 +5,17 @@ Created on Wed Jun  8 12:31:42 2016
 @author: ericgrimson
 """
 
+'''''
+•Solve a smaller problem
+•Solve a basic problem
+•Solve a smaller problem
+'''''
+
+counter = 1
 def printMove(fr, to):
-    print('move from ' + str(fr) + ' to ' + str(to))
+    global counter
+    print(str(counter) + ': move from ' + str(fr) + ' to ' + str(to))
+    counter += 1
 
 def Towers(n, fr, to, spare):
     if n == 1:

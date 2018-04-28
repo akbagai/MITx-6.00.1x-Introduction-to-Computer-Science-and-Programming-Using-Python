@@ -90,8 +90,11 @@ def words_often(freqs, minTimes):
         else:
             done = True
     return result
-    
-print(words_often(beatles, 5))
+
+
+print(most_common_words(beatles))
+
+print(words_often(beatles, 10))
 
             
     
