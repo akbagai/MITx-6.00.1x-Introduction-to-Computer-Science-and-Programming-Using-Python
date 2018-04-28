@@ -33,3 +33,8 @@ def avg(grades):
     except ZeroDivisionError:
         print('no grades data')
         return 0.0
+
+
+value = get_stats(test_grades)
+for i in value:
+    print(i)

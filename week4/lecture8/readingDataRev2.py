@@ -26,8 +26,15 @@ if data:
     for student in data:
         try:
             name = student[0:-1]
-            grades = int(student[-1])
+            grades = int(student[-1])            # This will raise a value error if the student does not have a grade
             gradesData.append([name, [grades]])
         except ValueError:
-            gradesData.append([student[:], []])
+            gradesData.append([student[:], []])  # The student does not have a grade, create an empty list for this student
 
+for i in data:
+    print(i)
+
+print("----------")
+
+for i in gradesData:
+    print(i)

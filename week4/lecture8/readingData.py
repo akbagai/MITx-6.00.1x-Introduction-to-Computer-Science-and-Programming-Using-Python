@@ -7,7 +7,7 @@ Created on Thu Jun  9 13:36:46 2016
 
 data = []
 
-file_name = input("Provide a name of a file of data ")
+file_name = input("Provide a name of a file of data: ")
 
 try:
     fh = open(file_name, 'r')
@@ -22,3 +22,4 @@ finally:
     fh.close() # close file even if fail
 
 
+print(data)

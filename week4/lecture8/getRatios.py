@@ -17,3 +17,11 @@ def get_ratios(L1, L2):
         except:
             raise ValueError('get_ratios called with bad arg')
     return ratios
+
+L1  = [1,2,3,4]
+L2 = [5,6,7,8]
+L3 = [15,6,7]
+L4 = [1,0,3,0]
+
+print(get_ratios(L1,L2))
+print(get_ratios(L1,L4))

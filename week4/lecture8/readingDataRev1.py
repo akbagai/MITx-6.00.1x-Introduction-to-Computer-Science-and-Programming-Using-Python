@@ -25,6 +25,18 @@ gradesData = []
 if data:
     for student in data:
         try:
-            gradesData.append([student[0:2], [student[2]]])
+            gradesData.append([student[0:2], [student[2]]])  # grab student first & lastname and the grade
         except IndexError:
-            gradesData.append([student[0:2], []])
+            gradesData.append([student[0:2], []])            # student does not have a grade, add empty list
+
+#print(data)
+
+for i in data:
+    print(i)
+
+#print(gradesData)
+
+print("----------")
+
+for i in gradesData:
+    print(i)
