@@ -2,6 +2,8 @@
 
 import random
 import string
+import copy
+from functools import reduce
 
 VOWELS = 'aeiou'
 CONSONANTS = 'bcdfghjklmnpqrstvwxyz'
@@ -71,7 +73,14 @@ def getWordScore(word, n):
     n: integer (HAND_SIZE; i.e., hand size required for additional points)
     returns: int >= 0
     """
-    # TO DO ... <-- Remove this comment when you code this function
+    score = 0
+    for letter in word:
+        score += SCRABBLE_LETTER_VALUES[letter]
+
+    score *= len(word)
+    if len(word) == n:
+        score += 50
+    return score
 
 
 
@@ -143,6 +152,11 @@ def updateHand(hand, word):
     returns: dictionary (string -> int)
     """
     # TO DO ... <-- Remove this comment when you code this function
+    hand_copy = copy.deepcopy(hand)
+    for letter in word:
+        hand_copy[letter] = hand_copy.get(letter, 0) - 1
+
+    return hand_copy
 
 
 
@@ -160,7 +174,27 @@ def isValidWord(word, hand, wordList):
     hand: dictionary (string -> int)
     wordList: list of lowercase strings
     """
-    # TO DO ... <-- Remove this comment when you code this function
+
+    word_is_valid = True
+    # the word is not valid if it's not in the wordList
+    if word not in wordList:
+        word_is_valid = False
+
+    # build a dictionary of the "word",
+    # the keys are the letters of the word
+    # the value is the frequency of that particular letter.
+    word_dict = getFrequencyDict(word)
+    #print(hand)
+    #print(word_dict)
+
+    for letter, count in word_dict.items():
+        check = hand.get(letter,0) - count
+        if check < 0:
+            word_is_valid = False
+            break
+
+    return word_is_valid
+
 
 
 #
@@ -173,8 +207,16 @@ def calculateHandlen(hand):
     
     hand: dictionary (string-> int)
     returns: integer
+    :type hand: dict
     """
-    # TO DO... <-- Remove this comment when you code this function
+
+    # Two ways of calculating the sum.
+    # 1. use reduce and lambda function, the default value is 0 if list is empty (last argument)
+    # 2. use the sum function to add up all the values in the list.
+
+    return reduce( (lambda x, y: x + y), hand.values(), 0)
+    #return sum(hand.values())
+
 
 
 
