@@ -334,14 +334,6 @@ def playGame(wordList):
             print("Invalid command.")
 
 
-
-
-    # TO DO ... <-- Remove this comment when you code this function
-    #print("playGame not yet implemented.") # <-- Remove this line when you code the function
-   
-
-
-
 #
 # Build data structures used for entire session and play game
 #
