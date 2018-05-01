@@ -10,6 +10,7 @@ class Coordinate(object):
     def __init__(self, x, y):
         self.x = x
         self.y = y
+        #print(object)
 
     def distance(self, other):
         x_diff_sq = (self.x - other.x) ** 2
@@ -31,3 +32,9 @@ class Coordinate(object):
 
 c = Coordinate(3, 4)
 origin = Coordinate(0, 0)
+
+#print(c)
+
+d = Coordinate(5,7)
+print(d.x)
+print(d.__str__())
